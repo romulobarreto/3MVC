@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "macbook",
+        "preco": 5700.0,
+        "quantidade": 3
+    },
+    {
+        "nome": "monitor",
+        "preco": 917.99,
+        "quantidade": 2
+    },
+    {
+        "nome": "mouse",
+        "preco": 78.5,
+        "quantidade": 1
+    }
+]
