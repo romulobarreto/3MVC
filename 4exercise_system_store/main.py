@@ -15,20 +15,20 @@ def menu():
             ProdutoView.listar_produtos()
 
             #Sub-menu
-            print("1.1- Detalhar produto")
-            print("1.2- Excluir produto")
-            print("1.3- Editar produto")
-            print("1.4- Voltar")
+            print("1- Detalhar produto")
+            print("2- Excluir produto")
+            print("3- Editar produto")
+            print("4- Voltar")
 
             opcao1 = input("\nEscolha uma das opções: ").strip()
 
-            if opcao1 == "1.1":
+            if opcao1 == "1":
                 ProdutoView.detalhar_produto()
-            elif opcao1 == "1.2":
+            elif opcao1 == "2":
                 ProdutoView.excluir_produto()
-            elif opcao1 == "1.3":
+            elif opcao1 == "3":
                 ProdutoView.editar_produto()
-            elif opcao1 == "1.4":
+            elif opcao1 == "4":
                 continue
             else:
                 print("⚠️ Opção inválida! Tente novamente.\n")
