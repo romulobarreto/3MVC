@@ -10,8 +10,18 @@
         "quantidade": 2
     },
     {
+        "nome": "teclado",
+        "preco": 45.6,
+        "quantidade": 2
+    },
+    {
         "nome": "mouse",
-        "preco": 78.5,
+        "preco": 99.99,
+        "quantidade": 7
+    },
+    {
+        "nome": "mousepad",
+        "preco": 20.5,
         "quantidade": 1
     }
 ]
