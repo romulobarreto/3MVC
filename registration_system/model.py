@@ -5,4 +5,4 @@ class User:
         self.idade = idade
     
     def formatar_dict(self):
-        return {'nome': {self.nome}, 'email': {self.email}, 'idade': {self.idade}} 
+        return {'nome': self.nome, 'email': self.email, 'idade': self.idade} 
