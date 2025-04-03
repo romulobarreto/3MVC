@@ -12,9 +12,10 @@ class UserDao():
         
     
     @staticmethod
-    def salvar_usuarios(usuario):
+    def salvar_usuarios(usuarios):
         try:
             with open("database.json", "w") as arq:
-                json.dump(arq, usuario, indent=4)
+                json.dump(usuarios, arq, indent=4)
+                return True
         except Exception as E:
-            return False, "⚠️ Erro ao salvar os dados."
+            return False
