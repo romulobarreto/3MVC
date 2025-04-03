@@ -117,6 +117,6 @@ class UserView():
         sucesso, mensagem = UserController.editar_usuario(nome, email, idade, usuario_lista)
         if sucesso:
             print(mensagem)
-            print(f"✅ {editar.title()} teve o dado de {chave} atualizado para: {nova_info}.")
+            print(f"✅ {editar} teve o dado de {chave} atualizado:\nDe: {usuario_lista[chave]}\nPara: {nova_info}.")
         else:
             print(mensagem)
