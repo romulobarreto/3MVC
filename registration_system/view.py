@@ -30,7 +30,10 @@ class UserView():
     @staticmethod
     def detalhar_usuario():
         # Captura o input
-        usuario = input("\nDigite o nome do usuário que deseja detalhar: ").strip().lower()
+        try:
+            usuario = int(input("\nDigite o index do usuário que deseja detalhar: ").strip().lower())
+        except ValueError:
+            print("⚠️ O index precisa ser um número inteiro.")
 
         # Chama a função de detalhar usuário
         sucesso, mensagem = UserController.detalhar_usuario(usuario)
@@ -109,6 +112,7 @@ class UserView():
                 email = usuario_lista['email']
                 idade = nova_info
             except ValueError:
+                nova_info = usuario_lista['idade']
                 nome = usuario_lista['nome']
                 email = usuario_lista['email']
                 idade = usuario_lista['idade']
@@ -116,7 +120,10 @@ class UserView():
         
         sucesso, mensagem = UserController.editar_usuario(nome, email, idade, usuario_lista)
         if sucesso:
-            print(mensagem)
-            print(f"✅ {editar} teve o dado de {chave} atualizado:\nDe: {usuario_lista[chave]}\nPara: {nova_info}.")
+            if usuario_lista[chave] == nova_info:
+                print(f"✅ Os dados permaneceram iguais.")
+            else:
+                print(mensagem)
+                print(f"✅ {editar} teve o dado de {chave} atualizado:\nDe: {usuario_lista[chave]}\nPara: {nova_info}")
         else:
             print(mensagem)
