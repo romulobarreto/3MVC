@@ -77,17 +77,13 @@ class UserController():
     def detalhar_usuario(usuario):
         # Carregar usuários cadastrados
         usuarios = UserDao.carregar_usuarios()
-
-        # Validação de usuário digitado
-        if not usuario:
-            return False, "⚠️ O nome não pode estar vazio."
         
         # Valida se o usuário está na lista
-        for user in usuarios:
-            if user['nome'] == usuario:
+        for index, user in enumerate(usuarios, start=1):
+            if index == usuario:
                 return True, f"🗂️ Dados detalhados:\nNome: {user['nome'].title()}\nEmail: {user['email']}\nIdade: {user['idade']}"
 
-        return False, "⚠️ O nome não está na lista."
+        return False, "⚠️ O usuário não está na lista."
     
     @staticmethod
     def excluir_usuario(usuario):
