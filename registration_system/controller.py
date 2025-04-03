@@ -5,7 +5,7 @@ import re
 class UserController():
 
     @staticmethod
-    def validar_dados(nome, email, idade):
+    def validar_dados(nome, email, idade, email_atual=None):
         # Forma um padrão de email
         padrao_email = r"^[\w]+([\.-]?[\w]+)*@[\w-]+(\.[\w-]+)+$"
 
@@ -19,7 +19,7 @@ class UserController():
         if not email:
             return False, "⚠️ O email não pode estar vazio."
         
-        if any(usuario['email'] == email for usuario in usuarios):
+        if email != email_atual and any(usuario['email'] == email for usuario in usuarios):
             return False, "🚫 Usuário já cadastrado."
         
         if not re.match(padrao_email, email):
@@ -120,7 +120,7 @@ class UserController():
     @staticmethod
     def editar_usuario(nome, email, idade, usuario_lista):
         # Valida os dados
-        sucesso, mensagem = UserController.validar_dados(nome, email, idade)
+        sucesso, mensagem = UserController.validar_dados(nome, email, idade, usuario_lista['email'])
         if not sucesso:
             return False, mensagem
 
