@@ -104,12 +104,14 @@ class UserView():
         elif chave == "idade":
             try:
                 idade = int(input('Digite a nova idade (ou pressione Enter para manter o mesmo): ').strip())
-                nova_info = idade if idade else usuario_lista['idade']
+                nova_info = idade
                 nome = usuario_lista['nome']
                 email = usuario_lista['email']
                 idade = nova_info
             except ValueError:
-                print("⚠️ A idade precisa ser um número inteiro.")
+                nome = usuario_lista['nome']
+                email = usuario_lista['email']
+                idade = usuario_lista['idade']
             
         
         sucesso, mensagem = UserController.editar_usuario(nome, email, idade, usuario_lista)
