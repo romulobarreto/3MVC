@@ -61,7 +61,7 @@ class UserView():
 
         # Valida se o nome está na lista
         if not editar:
-            print(f'⚠️ O nome digitado não pode ser vazio.')
+            print(f'⚠️ O email digitado não pode ser vazio.')
             return
             
         usuario_lista = None
@@ -103,7 +103,7 @@ class UserView():
 
         elif chave == "idade":
             try:
-                idade = int(input('Digite o novo email (ou pressione Enter para manter o mesmo): ').strip())
+                idade = int(input('Digite a nova idade (ou pressione Enter para manter o mesmo): ').strip())
                 nova_info = idade if idade else usuario_lista['idade']
                 nome = usuario_lista['nome']
                 email = usuario_lista['email']
